@@ -22,12 +22,14 @@ function startChangeIntervalTheme() {
   if (statusChangeTheme) {
     return;
   }
+  refs.start.setAttribute("disabled", "disabled");
   statusChangeTheme = setInterval(setTheme, TIME_OUT);
 }
 function stopChangeTheme() {
   if (!statusChangeTheme) {
     return;
   }
+  refs.start.removeAttribute("disabled");
   clearInterval(statusChangeTheme);
   statusChangeTheme = false;
 }
